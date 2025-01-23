@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo-slider.png";
+import logo from "../assets/logo-slider.png"; // Ajusta la ruta de tu logo
 
 const sections = [
     { label: "Inicio", to: "inicio" },
-    { label: "Nosotros", to: "nosotros" },
     { label: "Productos", to: "productos" },
+    { label: "Nosotros", to: "nosotros" },
+    { label: "Florecen", to: "florecen" },
     { label: "Contáctanos", to: "contactanos" },
 ];
 
-// Determina la sección activa según el scroll
 function getActiveSection() {
     let current = "inicio";
     for (let i = 0; i < sections.length; i++) {
@@ -42,31 +42,35 @@ const Navbar = () => {
     };
 
     return (
-        // Navbar transparente y con z-50 para estar sobre el Hero
-        <nav className="fixed top-0 w-full h-16 bg-transparent z-50">
-            <div className="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+        <nav className="fixed top-0 w-full h-16 bg-[#394446] z-50 flex items-center justify-center">
+            <div className="max-w-[1200px] w-full px-4 h-full flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center">
                     <img
                         src={logo}
-                        alt="Whisk Wings Logo"
-                        className="object-contain w-auto h-10 md:h-14"
+                        alt="Whisk & Wings Logo"
+                        className="object-contain w-auto h-10 md:h-12"
                     />
                 </div>
 
                 {/* Menú en escritorio */}
                 <ul className="hidden md:flex items-center space-x-8">
                     {sections.map(({ label, to }) => (
-                        <li key={to}>
+                        <li key={to} className="relative">
                             <a
                                 href={`#${to}`}
-                                className={`relative font-semibold transition-colors ${
-                                    activeSection === to ? "text-white/70" : "text-white"
+                                className={`font-semibold transition-colors ${
+                                    activeSection === to
+                                        ? "text-white"
+                                        : "text-white/80 hover:text-white"
                                 }`}
                             >
                                 {label}
                                 {activeSection === to && (
-                                    <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-white rounded-md"></span>
+                                    <motion.span
+                                        layoutId="underline"
+                                        className="absolute left-0 -bottom-1 w-full h-[2px] bg-white rounded-md"
+                                    />
                                 )}
                             </a>
                         </li>
@@ -76,7 +80,7 @@ const Navbar = () => {
                 {/* Botón hamburguesa en mobile */}
                 <button
                     onClick={toggleMenu}
-                    className="md:hidden text-white hover:text-white/70 transition-colors p-2"
+                    className="md:hidden text-white p-2 hover:text-white/70 transition-colors"
                 >
                     {openMenu ? (
                         // Ícono "X"
@@ -110,17 +114,17 @@ const Navbar = () => {
             <AnimatePresence>
                 {openMenu && (
                     <motion.div
-                        className="fixed inset-0 z-50 bg-white flex flex-col md:hidden"
-                        initial={{ height: 0 }}
-                        animate={{ height: "100%" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="fixed inset-0 z-50 bg-[#394446] flex flex-col md:hidden"
+                        initial={{ opacity: 0, x: "100%" }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: "100%" }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
                         {/* Botón Cerrar */}
                         <div className="flex justify-end p-4">
                             <button
                                 onClick={toggleMenu}
-                                className="text-black hover:text-black/70 transition-colors"
+                                className="text-white hover:text-white/70 transition-colors"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +146,7 @@ const Navbar = () => {
                                     key={to}
                                     href={`#${to}`}
                                     className={`text-2xl font-semibold ${
-                                        activeSection === to ? "text-gray-600" : "text-black"
+                                        activeSection === to ? "text-white" : "text-white/80"
                                     }`}
                                     onClick={() => setOpenMenu(false)}
                                 >

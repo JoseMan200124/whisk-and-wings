@@ -1,15 +1,19 @@
-// src/components/AnimacionScroll.jsx
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * Ejemplo simple de animación con GSAP al hacer scroll,
+ * sin acciones que generen rebote (onLeave, etc.).
+ */
 const AnimacionScroll = () => {
     const seccionRef = useRef(null);
 
     useEffect(() => {
-        gsap.fromTo(seccionRef.current,
+        gsap.fromTo(
+            seccionRef.current,
             { opacity: 0, y: 50 },
             {
                 opacity: 1,
@@ -17,20 +21,20 @@ const AnimacionScroll = () => {
                 duration: 1,
                 scrollTrigger: {
                     trigger: seccionRef.current,
-                    start: 'top 80%',
-                    end: 'bottom 60%',
-                    toggleActions: 'play none none reverse',
-                    // Efecto difuminado
-                    onEnter: () => gsap.to(seccionRef.current, { filter: 'blur(0px)', duration: 1 }),
-                    onLeave: () => gsap.to(seccionRef.current, { filter: 'blur(5px)', duration: 1 }),
+                    start: "top 80%",
+                    end: "bottom 60%",
+                    toggleActions: "play none none none",
                 },
             }
         );
     }, []);
 
     return (
-        <section ref={seccionRef} className="min-h-screen flex items-center justify-center bg-gray-100">
-            <h1 className="text-4xl font-bold">Bienvenido a Mi Página Profesional</h1>
+        <section
+            ref={seccionRef}
+            className="min-h-screen flex items-center justify-center bg-[#7B7B63]"
+        >
+            <h1 className="text-4xl font-bold text-white">Sección con Animación GSAP</h1>
         </section>
     );
 };
