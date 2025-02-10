@@ -7,7 +7,7 @@ const Nosotros = () => {
             id="nosotros"
             className="w-full min-h-[60vh] flex items-center justify-center relative"
             style={{
-                backgroundImage: 'url("/src/assets/nosotros-bg.jpeg")',
+                backgroundImage: 'url("/assets/nosotros-bg.jpeg")',
                 backgroundAttachment: "fixed",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",

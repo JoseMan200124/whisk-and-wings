@@ -2,11 +2,36 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const productImages = [
-    { src: "/src/assets/img1.jpeg", alt: "Producto 1" },
-    { src: "/src/assets/img2.jpeg", alt: "Producto 2" },
-    { src: "/src/assets/img3.jpeg", alt: "Producto 3" },
-    { src: "/src/assets/img4.jpeg", alt: "Producto 4" },
-    { src: "/src/assets/img5.jpeg", alt: "Producto 5" },
+    {
+        src: "/assets/img1.jpeg",
+        alt: "Cupcakes de flores",
+        description:
+            "Cupcakes de flores",
+    },
+    {
+        src: "/assets/img2.jpeg",
+        alt: "Chunky Cookies",
+        description:
+            "Chunky Cookies",
+    },
+    {
+        src: "/assets/img3.jpeg",
+        alt: "Galletas con Royal icing",
+        description:
+            "Galletas con Royal icing",
+    },
+    {
+        src: "/assets/img4.jpeg",
+        alt: "Mini donas",
+        description:
+            "Mini donas",
+    },
+    {
+        src: "/assets/img5.jpeg",
+        alt: "Cupcakes personalizados",
+        description:
+            "Cupcakes personalizados",
+    },
 ];
 
 const cardVariants = {
@@ -43,29 +68,57 @@ const ProductsSection = () => {
                 Dulces creaciones que te encantarán desde la primera mirada.
             </motion.p>
 
-            <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {productImages.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        className="relative overflow-hidden bg-[#7B7B63]/10 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                        initial="offscreen"
-                        whileInView="onscreen"
-                        viewport={{ once: true, amount: 0.2 }}
-                        variants={cardVariants}
-                    >
-                        <img
-                            src={item.src}
-                            alt={item.alt}
-                            className="w-full h-64 object-cover"
-                        />
-                        {/* Capa superpuesta con texto / frase genérica */}
-                        <div className="absolute inset-0 bg-black/25 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <p className="text-white font-bold text-lg px-4 text-center">
-                                Dulzura en cada detalle
-                            </p>
-                        </div>
-                    </motion.div>
-                ))}
+            <div className="max-w-6xl w-full flex flex-col gap-8">
+                {/* Primera fila: 3 imágenes */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                    {productImages.slice(0, 3).map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className="relative overflow-hidden bg-[#7B7B63]/10 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true, amount: 0.2 }}
+                            variants={cardVariants}
+                        >
+                            <img
+                                src={item.src}
+                                alt={item.alt}
+                                className="w-full h-64 object-cover"
+                            />
+                            {/* Capa superpuesta con descripción personalizada */}
+                            <div className="absolute inset-0 bg-black/25 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <p className="text-white font-bold text-lg px-4 text-center">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+                {/* Segunda fila: 2 imágenes centradas */}
+                <div className="flex justify-center gap-8">
+                    {productImages.slice(3).map((item, index) => (
+                        <motion.div
+                            key={index + 3} // Se suma 3 para mantener claves únicas
+                            className="relative overflow-hidden bg-[#7B7B63]/10 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true, amount: 0.2 }}
+                            variants={cardVariants}
+                        >
+                            <img
+                                src={item.src}
+                                alt={item.alt}
+                                className="w-full h-64 object-cover"
+                            />
+                            {/* Capa superpuesta con descripción personalizada */}
+                            <div className="absolute inset-0 bg-black/25 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <p className="text-white font-bold text-lg px-4 text-center">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

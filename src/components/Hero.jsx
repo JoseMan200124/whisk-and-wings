@@ -17,7 +17,7 @@ const useIsMobile = (breakpoint = 768) => {
 
 const slides = [
     {
-        src: "/src/assets/slide4.jpg",
+        src: "/assets/slide4.jpg",
         backgroundColor: "#394446",
         slogan: "Sabores que Enamoran",
         description:
@@ -25,7 +25,7 @@ const slides = [
         customClass: "",
     },
     {
-        src: "/src/assets/slide5.jpg",
+        src: "/assets/slide5.jpg",
         backgroundColor: "#49442E",
         slogan: "Dulces Momentos",
         description:
@@ -33,7 +33,7 @@ const slides = [
         customClass: "md:scale-95",
     },
     {
-        src: "/src/assets/slide1.jpg",
+        src: "/assets/slide1.jpg",
         backgroundColor: "#7B7B63",
         slogan: "Arte y Sabor en Cada Creación",
         description:
@@ -41,7 +41,7 @@ const slides = [
         customClass: "",
     },
     {
-        src: "/src/assets/slide2.jpg",
+        src: "/assets/slide2.jpg",
         backgroundColor: "#394446",
         slogan: "La Dulzura Hecha Arte",
         description:
@@ -49,7 +49,7 @@ const slides = [
         customClass: "",
     },
     {
-        src: "/src/assets/slide3.jpg",
+        src: "/assets/slide3.jpg",
         backgroundColor: "#49442E",
         slogan: "Experiencias Dulces Inolvidables",
         description:

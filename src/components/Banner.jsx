@@ -16,7 +16,7 @@ const Banner = () => {
             <div className="absolute inset-0 pointer-events-none bg-[#394446]/20" />
             <div className="relative z-10 max-w-3xl mx-auto text-white">
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                    “La magia empieza con un batidor y se eleva con unas alas.”
+                    “La magia está en cada detalle, transformando sabores en emociones.”
                 </h2>
                 <p className="text-base md:text-lg mb-8">
                     Innovamos cada día para llevarte dulces experiencias que trascienden

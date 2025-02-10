@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/logo-slider.png"; // Ajusta la ruta de tu logo
+import logo from "../../public/assets/logo-slider.png"; // Ajusta la ruta de tu logo
 
 const sections = [
     { label: "Inicio", to: "inicio" },
