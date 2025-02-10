@@ -46,7 +46,7 @@ const Florecen = () => {
                         {/* Imagen principal */}
                         <div className="relative z-10 w-full h-64 md:h-96 bg-gray-100 rounded-lg shadow-md overflow-hidden">
                             <img
-                                src="/public/assets/emprendedores-ganadores.jpeg"
+                                src="/assets/emprendedores-ganadores.jpeg"
                                 alt="Ganadores de Emprendedores que Florecen"
                                 className="w-full h-full object-cover"
                             />
@@ -71,7 +71,7 @@ const Florecen = () => {
               `}
                         >
                             <img
-                                src="/public/assets/emprendedores-ganadores2.jpg"
+                                src="/assets/emprendedores-ganadores2.jpg"
                                 alt="Otro ángulo de los ganadores"
                                 className="w-full h-full object-cover"
                             />
